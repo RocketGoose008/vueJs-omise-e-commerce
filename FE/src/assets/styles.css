@@ -535,6 +535,19 @@ span {
   justify-content: center;
   font-weight: bold;
 }
+/* loding icon */
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255,255,255,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* ให้ทับ modal ทุกตัว */
+}
+
 
 
 /* ====================
@@ -557,6 +570,7 @@ span {
 }
 .payment-option:hover {
   transform: scale(1.05);
+  background-color: #ff5733;
 }
 .payment-option-container {
   display: flex; /* ใช้ flexbox */
@@ -614,6 +628,51 @@ span {
   font-size: 1.5rem;
   padding: 5px;
   cursor: pointer;
+}
+/* Modal QR code */
+.swal2-container {
+  z-index: 99999 !important;
+}
+.qr-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.qr-image {
+  width: 200px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+.qr-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.qr-popup-overlay {
+  position: fixed;      
+  top: 0;
+  left: 0;
+  width: 100vw;         /* เต็มหน้าจอ */
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;        /* กำหนด z-index ให้สูงกว่า modal อื่นๆ */
+}
+.qr-popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  width: 90%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 /* ====================
@@ -674,6 +733,15 @@ span {
   padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
+}
+/* ปุ่มตอน disabled ไม่มีสินค้าในตะกร้า */
+.cart-button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: not-allowed;
 }
 .cart-button:hover {
   background-color: #e64000;
@@ -779,6 +847,26 @@ span {
   margin: auto;
 }
 
+/* ตะกร้าว่าง */
+.empty-cart {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #555;
+  filter: grayscale(90%) opacity(20%);
+  height: 200px;
+  max-height: 250px;
+}
+.empty-cart-txt {
+  font-family: 'Cherry Swash', cursive;
+  font-size: 30px;
+}
 
 
 
@@ -808,9 +896,9 @@ span {
   color: white;
 }
 
-
+/* ปุ่มลบสินค้าในตะกร้า */
 .all-cart-item-remove {
-  background-color: #ff4d4d;
+  background-color: #cccccc;
   border: none;
   color: white;
   padding: 5px 10px;
@@ -822,6 +910,7 @@ span {
 }
 .all-cart-item-remove:hover {
   opacity: 0.8;
+  background-color: #ff4d4d;
 }
 
 

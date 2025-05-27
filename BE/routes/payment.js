@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { createCharge, retrieveCharge } = require('../services/omiseService');
+const { createCharge, retrieveCharge, createPromptPaySource } = require('../services/omiseService');
 
 router.post('/create-charge', async (req, res) => {
   const { amount, currency = 'thb', source, card, source_type } = req.body;
@@ -26,6 +26,7 @@ router.post('/create-charge', async (req, res) => {
           currency: result.currency,
           transaction: result.transaction,
           createdAt: result.created_at,
+          source: result.source,
         }
       });
     }
@@ -91,6 +92,22 @@ router.get('/check-status/:id', async (req, res) => {
       msg: 'Unable to check charge status',
       err: err.message || err,
     });
+  }
+});
+
+// สร้าง PromptPay source (QR code)
+router.post('/create-promptpay-source', async (req, res) => {
+  const { amount, currency = 'THB' } = req.body;
+  try {
+    const result = await createPromptPaySource({ amount, currency });
+    console.log("result ",result)
+    res.status(200).json({
+      code: 200,
+      status: 'success',
+      source: result.source,
+    });
+  } catch (err) {
+    res.status(500).json({ code: 500, status: 'fail', msg: err.message });
   }
 });
 
