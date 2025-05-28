@@ -9,7 +9,7 @@
           <div class="all-cart-item-detail">
             <div class="all-cart-item-name">{{ item.name }}</div>
             <div class="all-cart-item-meta">
-              <span>฿{{ item.price.toLocaleString() }}</span>
+              <div class="product-price-menu"> ฿ {{ item.price.toLocaleString() }} </div>
               <div class="all-cart-qty-controls">
                 <button @click="decreaseQty(index)">−</button>
                 <span>{{ item.qty }}</span>
@@ -23,8 +23,8 @@
         </li>
       </ul>
       <div class="all-cart-total">
-        <strong>ยอดรวม: </strong>
-        <span>฿{{ totalPrice.toLocaleString() }}</span>
+        <strong> ยอดรวม: </strong>
+        <span> ฿ {{ totalPrice }} </span>
       </div>
       <PaymentOptions v-if="!isCheckout" @choose-payment-method="choosePaymentMethod" />
       <PaymentMethod v-if="isCheckout" :paymentMethod="paymentMethod" :totalPrice="totalPrice" />

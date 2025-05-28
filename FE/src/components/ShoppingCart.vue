@@ -28,10 +28,10 @@
               <div class="all-cart-item-name">{{ item.name }}</div>
 
               <div class="all-cart-item-meta">
-                <span>฿{{ item.price.toLocaleString() }}</span>
+                <div class="product-price-menu"> ฿ {{ item.price.toLocaleString() }}</div>
                 <div class="all-cart-qty-controls">
                   <button @click="decreaseQty(index)">−</button>
-                  <span>{{ item.qty }}</span>
+                  <span> {{ item.qty }} </span>
                   <button @click="increaseQty(index)">＋</button>
                 </div>
               </div>
@@ -49,7 +49,8 @@
         </div>
 
         <div class="all-cart-total">
-          <strong>ยอดรวม:</strong> ฿{{ totalPrice.toLocaleString() }}
+          <strong> ยอดรวม: </strong>
+          <div class="product-price-menu" style="width: auto;"> ฿ {{ totalPrice }} </div>
         </div>
 
         <div v-if="!isCheckout && cart.length > 0" class="payment-option-container">
@@ -115,7 +116,8 @@
     },
     computed: {
       totalPrice() {
-        return this.cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+        const total = this.cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+        return total.toFixed(2);
       }
     },
     mounted() {

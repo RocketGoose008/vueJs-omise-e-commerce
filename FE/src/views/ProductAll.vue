@@ -36,7 +36,8 @@
               <div class="all-cart-item-name">{{ item.name }}</div>
 
               <div class="all-cart-item-meta">
-                <span>฿{{ item.price.toLocaleString() }}</span>
+                <!-- ราคาสินค้า -->
+                <div class="product-price-menu"> ฿ {{ item.price }}</div>
 
                 <!-- ปุ่มเพิ่ม/ลดจำนวน -->
                 <div class="all-cart-qty-controls">
@@ -57,8 +58,8 @@
 
         <!-- แสดงยอดรวม -->
         <div class="all-cart-total">
-          <strong>ยอดรวม: </strong>
-          <span>฿{{ totalPrice.toLocaleString() }}</span>
+          <strong> ยอดรวม: </strong>
+          <div class="product-price-menu"> ฿ {{ totalPrice }} </div>
         </div>
 
         <!-- ปุ่มเลือกวิธีการชำระเงิน -->
@@ -123,7 +124,8 @@
     computed: {
       // คำนวณราคาทั้งหมดในตะกร้า
       totalPrice() {
-        return this.cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+        const total = this.cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+        return total.toFixed(2);
       }
     },
 

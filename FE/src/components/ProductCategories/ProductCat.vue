@@ -6,12 +6,18 @@
         <div class="cart-image-container-p">
           <img class="box-product" :src="product.defaultImg" width="150px" />
           
-          <!-- ปุ่มตะกร้ากลมๆ -->
+          <!-- ตะกร้าบนสินค้า -->
           <div @click="openModal(product)" class="cart-icon-btn-p">
             <i class="fas fa-shopping-cart"></i>
           </div>
 
+          <!-- ชื่อสินค้า -->
           <strong class="product-name">{{ product.name }}</strong><br>
+
+          <!-- ราคาสินค้า -->
+          <strong align="left" class="product-price-menu">
+            ฿ {{ Number(product.options[0].price).toLocaleString(undefined, { minimumFractionDigits: 2 }) }}
+          </strong>
         </div>
       </div>
     </div>
@@ -35,7 +41,7 @@
         <!-- แสดงชื่อและราคา -->
         <div v-if="selectedOption" style="margin-top: 10px;">
           <strong class="modal-product-name"> {{ selectedOption.name }} </strong><br>
-          <span class="modal-product-price" style="color: #ff5733;">{{ selectedOption.price.toLocaleString() }} ฿</span>
+          <span class="modal-product-price"> ฿ {{ selectedOption.price.toLocaleString() }} </span>
         </div>
 
         <!-- จำนวนสินค้า -->

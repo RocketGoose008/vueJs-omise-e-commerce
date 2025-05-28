@@ -91,7 +91,7 @@
 ==================== */
 body {
   font-size: 12px;
-  font-family: sans-serif;
+  font-family: system-ui;
   background: #dae3eb;
 }
 #app {
@@ -156,6 +156,7 @@ nav .start-contact, a:nth-child(5):hover~.animation { background-color: #e67e22;
   gap: 20px;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+  font-weight: bold;
 } 
 .navbar a {
   white-space: nowrap; 
@@ -300,11 +301,12 @@ p {
   bottom: 20px;
   text-align: center;
   color: #050505;
-  font-family: 'Cherry Swash', cursive;
   font-size: 16px;
 }
 span {
-  color: #59b6a4;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  font-weight: bold;
 }
 
 /* ====================
@@ -326,7 +328,7 @@ span {
   width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 10px; /* เว้นระยะใต้ภาพ */
+  margin-bottom: 10px; 
 }
 .product-info {
   display: block;
@@ -381,6 +383,18 @@ span {
   background: #eee;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+.product-price-menu {
+  display: inline-block;
+  width: 150px;
+  white-space: normal;
+  word-wrap: break-word;
+  text-align: left;
+  height: 30px;
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 /* ====================
@@ -712,6 +726,7 @@ span {
   font-size: 14px;
   margin: 5px 0;
   color: red;
+  font-weight: bold;
 }
 .option-images img {
   width: 100px;
@@ -864,7 +879,6 @@ span {
   max-height: 250px;
 }
 .empty-cart-txt {
-  font-family: 'Cherry Swash', cursive;
   font-size: 30px;
 }
 

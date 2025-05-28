@@ -35,7 +35,8 @@ export default {
   },
   computed: {
     totalPrice() {
-      return this.cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      const total = this.cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+      return total.toFixed(2);
     },
   },
   methods: {

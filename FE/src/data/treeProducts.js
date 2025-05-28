@@ -28,7 +28,7 @@ const treeProducts = [
             {
                 name: '1 pcs',
                 price: '600.00',
-                img: 'https://prod-eurasian-res.popmart.com/default/20250409_155205_828277_____08_____1200x1598.jpg?x-oss-process=image/format,webp'
+                img: 'https://leafandclay.co/cdn/shop/products/echeveria_rainbow_copy.jpg?v=1630083617&width=1280'
             }
         ]
     },

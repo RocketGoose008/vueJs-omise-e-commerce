@@ -7,7 +7,7 @@
         <div class="cart-image-container-p">
           <img class="box-product" :src="product.defaultImg" width="150px" />
           
-          <!-- ปุ่มตะกร้ากลมๆ -->
+          <!-- ตะกร้าบนสินค้า -->
           <div @click="openModal(product)" class="cart-icon-btn-p">
             <i class="fas fa-shopping-cart"></i>
           </div>

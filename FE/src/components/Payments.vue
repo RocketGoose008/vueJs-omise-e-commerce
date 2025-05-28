@@ -40,8 +40,8 @@
     name: 'PaymentComponent',
     props: {
         totalPrice: {
-        type: Number,
-        required: true,
+          type: Number,
+          required: true,
         },
     },
     data() {

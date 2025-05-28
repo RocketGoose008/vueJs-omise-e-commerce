@@ -3,10 +3,10 @@
     
     <!-- Navbar -->
     <nav class="navbar">
-      <a href="#" @click.prevent="show('all')">All</a>
-      <a href="#" @click.prevent="show('tree')">Succulents</a>
-      <a href="#" @click.prevent="show('cat')">Cats</a>
-      <a href="#" @click.prevent="show('toys')">Art toys</a>
+      <a href="#" @click.prevent="show('all')"> All </a>
+      <a href="#" @click.prevent="show('tree')"> Succulents </a>
+      <a href="#" @click.prevent="show('cat')"> Cats </a>
+      <a href="#" @click.prevent="show('toys')"> Art toys </a>
     </nav>
 
     <!-- เนื้อหา -->
