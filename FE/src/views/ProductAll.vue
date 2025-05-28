@@ -37,7 +37,9 @@
 
               <div class="all-cart-item-meta">
                 <!-- ราคาสินค้า -->
-                <div class="product-price-menu"> ฿ {{ item.price }}</div>
+                <div class="product-price-menu"> 
+                  ฿ {{ item.price }}
+                </div>
 
                 <!-- ปุ่มเพิ่ม/ลดจำนวน -->
                 <div class="all-cart-qty-controls">

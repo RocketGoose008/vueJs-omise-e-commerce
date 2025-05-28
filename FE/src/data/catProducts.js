@@ -5,7 +5,7 @@ const catProducts = [
         options: [
             {
                 name: '1 pcs',
-                price: '45.00',
+                price: 45.00,
                 img: 'https://down-th.img.susercontent.com/file/th-11134207-7r98o-ltyudcrjyrwha1.webp'
             }
         ]
@@ -16,7 +16,7 @@ const catProducts = [
         options: [
             {
                 name: '1 pcs',
-                price: '490.00',
+                price: 490.00,
                 img: 'https://down-th.img.susercontent.com/file/4f9840614193c8fbe169f5a5e03ca12d.webp'
             }
         ]
@@ -27,7 +27,7 @@ const catProducts = [
         options: [
             {
                 name: '1 pcs',
-                price: '20.00',
+                price: 20.00,
                 img: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ_BzUVRAeiTSB4YbxPwP_CnUrauUohr7Z3uYTXPz7_VCdBiswQKsOe3s4XK7KBnx36KGTnSqRlwSa4u2vuQSorAic41TaSU6E1bXUb8vU'
             }
         ]
@@ -38,7 +38,7 @@ const catProducts = [
         options: [
             {
                 name: '1 pcs',
-                price: '550.00',
+                price: 550.00,
                 img: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcREEedATrGPUF7Or79WeFSkAcQHYqCqFzGpiWZRSCAXTJhV_y8fCjEnj4irFa9ZqQQlbsa_kphnNOZ_h6C955fh83DIsM9dtITVAnHeyLU'
             }
         ]

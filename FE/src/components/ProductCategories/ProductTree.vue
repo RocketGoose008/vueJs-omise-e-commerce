@@ -18,8 +18,8 @@
           <strong class="product-name">{{ product.name }}</strong><br>
 
           <!-- ราคาสินค้า -->
-          <strong align="left" class="product-price-menu">
-            ฿ {{ Number(product.options[0].price).toLocaleString(undefined, { minimumFractionDigits: 2 }) }}
+          <strong class="product-price-menu">
+            ฿ {{ formatPrice(product.options[0].price) }}
           </strong>
 
         </div>
@@ -117,7 +117,13 @@
         this.selectedProduct = null;
         this.selectedOption = null;
         this.quantity = 1;
-      }
+      },
+      formatPrice(price) {
+        return Number(price).toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        });
+      },
     }
   };
 </script>

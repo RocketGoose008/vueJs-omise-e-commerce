@@ -335,7 +335,7 @@ span {
 }
 .product-name {
   display: inline-block;
-  width: 150px;
+  width: auto;
   white-space: normal;
   word-wrap: break-word;
   text-align: center;

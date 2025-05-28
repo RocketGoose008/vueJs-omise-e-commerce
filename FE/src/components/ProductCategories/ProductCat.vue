@@ -5,19 +5,22 @@
       <div v-for="(product, index) in products" :key="index" class="product-card">
         <div class="cart-image-container-p">
           <img class="box-product" :src="product.defaultImg" width="150px" />
-          
+
           <!-- ตะกร้าบนสินค้า -->
           <div @click="openModal(product)" class="cart-icon-btn-p">
             <i class="fas fa-shopping-cart"></i>
           </div>
 
           <!-- ชื่อสินค้า -->
-          <strong class="product-name">{{ product.name }}</strong><br>
+          <strong class="product-name">{{ product.name }}</strong>
+          
+          <br>
 
           <!-- ราคาสินค้า -->
-          <strong align="left" class="product-price-menu">
-            ฿ {{ Number(product.options[0].price).toLocaleString(undefined, { minimumFractionDigits: 2 }) }}
+          <strong class="product-price-menu">
+            ฿ {{ formatPrice(product.options[0].price) }}
           </strong>
+
         </div>
       </div>
     </div>
@@ -40,8 +43,13 @@
 
         <!-- แสดงชื่อและราคา -->
         <div v-if="selectedOption" style="margin-top: 10px;">
-          <strong class="modal-product-name"> {{ selectedOption.name }} </strong><br>
-          <span class="modal-product-price"> ฿ {{ selectedOption.price.toLocaleString() }} </span>
+          <strong class="modal-product-name"> 
+            {{ selectedOption.name }} 
+          </strong>
+          <br />
+          <div class="modal-product-price"> 
+            ฿ {{ selectedOption.price.toLocaleString(undefined, { minimumFractionDigits: 2 }) }}
+          </div>
         </div>
 
         <!-- จำนวนสินค้า -->
@@ -113,7 +121,13 @@
         this.selectedProduct = null;
         this.selectedOption = null;
         this.quantity = 1;
-      }
+      },
+      formatPrice(price) {
+        return Number(price).toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        });
+      },
     }
   };
 </script>

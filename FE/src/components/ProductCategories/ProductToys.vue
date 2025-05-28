@@ -15,11 +15,15 @@
         </div>
 
         <!-- ชื่อสินค้า -->
-        <strong class="product-name">{{ product.name }}</strong><br>
+        <strong class="product-name">
+          {{ product.name }}
+        </strong>
+        
+        <br />
 
         <!-- ราคาสินค้า -->
-        <strong align="left" class="product-price-menu">
-          ฿ {{ Number(product.options[0].price).toLocaleString(undefined, { minimumFractionDigits: 2 }) }}
+        <strong class="product-price-menu">
+          ฿ {{ formatPrice(product.options[0].price) }}
         </strong>
 
       </div>
@@ -41,11 +45,15 @@
         </div>
 
         <!-- ชื่อสินค้า -->
-        <strong class="product-name">{{ product.name }}</strong><br>
+        <strong class="product-name">
+          {{ product.name }}
+        </strong>
+        
+        <br />
 
         <!-- ราคาสินค้า -->
-        <strong align="left" class="product-price-menu">
-          ฿ {{ Number(product.options[0].price).toLocaleString(undefined, { minimumFractionDigits: 2 }) }}
+        <strong class="product-price-menu">
+          ฿ {{ formatPrice(product.options[0].price) }}
         </strong>
 
       </div>
@@ -67,11 +75,15 @@
         </div>
 
         <!-- ชื่อสินค้า -->
-        <strong class="product-name">{{ product.name }}</strong><br>
+        <strong class="product-name">
+          {{ product.name }}
+        </strong>
+        
+        <br />
 
         <!-- ราคาสินค้า -->
-        <strong align="left" class="product-price-menu">
-          ฿ {{ Number(product.options[0].price).toLocaleString(undefined, { minimumFractionDigits: 2 }) }}
+        <strong class="product-price-menu">
+          ฿ {{ formatPrice(product.options[0].price) }}
         </strong>
 
       </div>
@@ -93,11 +105,15 @@
         </div>
 
         <!-- ชื่อสินค้า -->
-        <strong class="product-name">{{ product.name }}</strong><br>
+        <strong class="product-name">
+          {{ product.name }}
+        </strong>
+        
+        <br />
 
         <!-- ราคาสินค้า -->
-        <strong align="left" class="product-price-menu">
-          ฿ {{ Number(product.options[0].price).toLocaleString(undefined, { minimumFractionDigits: 2 }) }}
+        <strong class="product-price-menu">
+          ฿ {{ formatPrice(product.options[0].price) }}
         </strong>
 
       </div>
@@ -123,8 +139,13 @@
 
         <!-- แสดงชื่อและราคา -->
         <div v-if="selectedOption" style="margin-top: 10px;">
-          <strong class="modal-product-name"> {{ selectedOption.name }} </strong><br>
-          <span class="modal-product-price"> ฿ {{ selectedOption.price.toLocaleString() }} </span>
+          <strong class="modal-product-name"> 
+            {{ selectedOption.name }} 
+          </strong>
+          <br />
+          <div class="modal-product-price"> 
+            ฿ {{ selectedOption.price.toLocaleString(undefined, { minimumFractionDigits: 2 }) }}
+          </div>
         </div>
 
         <!-- จำนวนสินค้า -->
@@ -168,7 +189,9 @@
       };
     },
     created() {
+      console.log('toysProducts:', toysProducts);
       this.splitProducts();
+      console.log('labubuProducts:', this.labubuProducts);
     },
     methods: {
       splitProducts() {
@@ -208,7 +231,13 @@
         this.selectedProduct = null;
         this.selectedOption = null;
         this.quantity = 1;
-      }
+      },
+      formatPrice(price) {
+        return Number(price).toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        });
+      },
     }
   };
 </script>
