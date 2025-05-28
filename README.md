@@ -59,7 +59,7 @@ VUE_APP_OMISE_LIBRARY=https://cdn.omise.co/omise.js
 VUE_APP_OMISE_SOURCES_URL=https://api.omise.co/sources
 ````
 
-# คำสั่ง run
+### คำสั่ง run
 ```bash
 npm run serve
 ````
