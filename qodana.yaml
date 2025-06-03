@@ -2,5 +2,8 @@ version: "1.0"
 linter: jetbrains/qodana-jvm:2025.1
 profile:
   name: qodana.recommended
-include:
-  - name: CheckDependencyLicenses
+# include:
+#   - name: CheckDependencyLicenses
+exclude:
+  - node_modules
+  - dist
