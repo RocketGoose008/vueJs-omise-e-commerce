@@ -17,8 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.pull_request.head.sha }}  # to check out the actual pull request commit, not the merge commit
-          fetch-depth: 0  # a full history is required for pull request analysis
+          fetch-depth: 0
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v2025.1
         with:
@@ -26,3 +25,13 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
           QODANA_ENDPOINT: 'https://qodana.cloud'
+      - name: Check QODANA_TOKEN is set
+        run: |
+          if [ -z "$QODANA_TOKEN" ]; then
+            echo "QODANA_TOKEN is empty"
+            exit 1
+          else
+            echo "QODANA_TOKEN is set"
+          fi
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
