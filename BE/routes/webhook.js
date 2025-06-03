@@ -12,10 +12,10 @@ router.post('/omise', bodyParser.json(), async (req, res) => {
 
     if (charge.status === 'successful' && charge.paid) {
       console.log('# Payment successful for charge:', charge.id);
-      // TODO: อัปเดตสถานะคำสั่งซื้อในฐานข้อมูลของคุณที่นี่
+      // TODO: Update data to DB.
     } else {
       console.log('# Payment failed or incomplete:', charge.id);
-      // TODO: จัดการกรณีล้มเหลว (เช่น แจ้งเตือน user)
+      // TODO: Alert!
     }
   }
 
