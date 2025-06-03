@@ -5,5 +5,5 @@ profile:
 # include:
 #   - name: CheckDependencyLicenses
 exclude:
-  - node_modules
-  - dist
+  - name: node_modules
+  - name: dist
