@@ -83,7 +83,5 @@ npm run serve
 
 
 ---
-[![▶️ Watch the video]((./public/shoping-web-prevideo.png))](https://github.com/RocketGoose008/repo/raw/main/public/shoping-web-prevideo.mp4)
 
-
-[▶️ Watch the video](./shoping-web-prevideo.mp4)
+![▶️ Demo Animation](public/shoping-web-prevideo.gif)
