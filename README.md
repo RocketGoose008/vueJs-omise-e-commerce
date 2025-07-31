@@ -80,3 +80,10 @@ npm run serve
 2. ติดตั้ง ngrok
 3. run ngrok
 4. นำ URL ที่ได้มาใช้ในการ set webhook omise
+
+
+---
+[![▶️ Watch the video]((./public/shoping-web-prevideo.png))](https://github.com/RocketGoose008/repo/raw/main/public/shoping-web-prevideo.mp4)
+
+
+[▶️ Watch the video](./shoping-web-prevideo.mp4)
