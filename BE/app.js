@@ -1,9 +1,8 @@
 require('dotenv').config();  // โหลด .env
 const express = require('express');
 const cors = require('cors');
+
 const app = express();
-const paymentRoutes = require('./routes/payment');
-const webhookRoutes = require('./routes/webhook');
 
 // เปิด cors ทุกโดเมน
 app.use(cors());
@@ -15,10 +14,9 @@ app.use(cors({
 app.use(express.json());
 
 // เส้นทาง API
+const paymentRoutes = require('./routes/payment');
+const webhookRoutes = require('./routes/webhook');
 app.use('/api/payment', paymentRoutes);
 app.use('/api/webhook', webhookRoutes);
 
-const PORT = process.env.PORT || 8001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
+module.exports = app; 
